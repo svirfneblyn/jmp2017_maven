@@ -7,6 +7,7 @@
     <groupId>com.epam.maven</groupId>
     <artifactId>jmp2017_maven</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>app</name>
     <packaging>war</packaging>
 
     <properties>
@@ -26,7 +27,9 @@
         </dependencies>
     </dependencyManagement>
     <build>
+        <finalName>webapp</finalName>
         <plugins>
+
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
@@ -42,6 +45,16 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!--<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>RELEASE</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/app</url>
+                    <server>Tomcat1</server>
+                    <path>/webapp</path>
+                </configuration>
+            </plugin>-->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -78,24 +91,36 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat -->
 
-           <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.13</version>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
-                    <configLocation>src/config/checkstyle.xml</configLocation>
-                    <consoleOutput>true</consoleOutput>
+                    <url>http://localhost:8080/manager/app</url>
+                    <server>Tomcat1</server>
+                    <path>/webapp</path>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>-->
+            </plugin>
+            <!-- <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-checkstyle-plugin</artifactId>
+                 <version>2.13</version>
+                 <configuration>
+                     <configLocation>src/config/checkstyle.xml</configLocation>
+                     <consoleOutput>true</consoleOutput>
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <phase>package</phase>
+                         <goals>
+                             <goal>check</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>-->
         </plugins>
     </build>
 
@@ -137,7 +162,10 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>deploy_tomcat</id>
 
+        </profile>
         <profile>
             <id>jetty</id>
             <dependencies>
