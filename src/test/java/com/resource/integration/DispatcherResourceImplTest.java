@@ -1,4 +1,9 @@
-package com.resource;
+/*
+ * VTB Group. Do not reproduce without permission in writing.
+ * Copyright (c) 2017 VTB Group. All rights reserved.
+ */
+
+package com.resource.integration;
 
 import com.Application;
 import com.dto.DispatcherDto;
