@@ -33,6 +33,7 @@
 
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -178,7 +179,7 @@
         </profile>
 
         <profile>
-            <id>deploy_tomcat</id>
+            <id>integration_test</id>
             <build>
                 <plugins>
                     <plugin>
