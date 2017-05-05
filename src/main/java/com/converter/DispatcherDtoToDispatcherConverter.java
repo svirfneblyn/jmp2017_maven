@@ -2,7 +2,7 @@ package com.converter;
 
 
 import com.dto.DispatcherDto;
-import com.model.Dispatcher;
+import com.domain.Dispatcher;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Function;

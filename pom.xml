@@ -45,16 +45,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!--<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
-                <version>RELEASE</version>
-                <configuration>
-                    <url>http://localhost:8080/manager/app</url>
-                    <server>Tomcat1</server>
-                    <path>/webapp</path>
-                </configuration>
-            </plugin>-->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -92,8 +82,6 @@
                 </executions>
             </plugin>
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat -->
-
-
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -104,23 +92,6 @@
                     <path>/webapp</path>
                 </configuration>
             </plugin>
-            <!-- <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-checkstyle-plugin</artifactId>
-                 <version>2.13</version>
-                 <configuration>
-                     <configLocation>src/config/checkstyle.xml</configLocation>
-                     <consoleOutput>true</consoleOutput>
-                 </configuration>
-                 <executions>
-                     <execution>
-                         <phase>package</phase>
-                         <goals>
-                             <goal>check</goal>
-                         </goals>
-                     </execution>
-                 </executions>
-             </plugin>-->
         </plugins>
     </build>
 
@@ -151,6 +122,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>1.5.3.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+        </dependency>
+
 
         <dependency>
             <groupId>junit</groupId>

@@ -4,7 +4,7 @@ import com.converter.DispatcherDtoToDispatcherConverter;
 import com.converter.DispatcherToDispatcherDtoConverter;
 import com.dao.Cache;
 import com.dto.DispatcherDto;
-import com.model.Dispatcher;
+import com.domain.Dispatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.service.IDispatcherService;

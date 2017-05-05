@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.model.Dispatcher;
+import com.domain.Dispatcher;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

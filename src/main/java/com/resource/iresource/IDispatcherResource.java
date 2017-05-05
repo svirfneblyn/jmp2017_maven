@@ -13,7 +13,7 @@ public interface IDispatcherResource {
     @RequestMapping(value = "/dispatcher", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     ResponseEntity<?> addDispatcher(@RequestBody DispatcherDto dispatcherDto);
 
-    @GetMapping(value = "/dispatcher", produces = "application/json")
+    @GetMapping(value = "/", produces = "application/json")
     List<DispatcherDto> getDispatchers();
 
     @RequestMapping(value = "/dispatcher/{name}", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
