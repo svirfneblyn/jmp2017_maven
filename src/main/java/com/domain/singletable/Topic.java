@@ -1,4 +1,4 @@
-package com.domain.quiz;
+package com.domain.singletable;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -13,13 +13,13 @@ import javax.persistence.*;
 @Data
 @Accessors(chain = true)
 @SuppressWarnings("superwarningTopic")
-@Entity
-@Inheritance
-@DiscriminatorColumn()
-@Table(name ="quiz")
-public abstract class Topic {
+@DiscriminatorColumn(name = "discriminator_column")
+@MappedSuperclass
+public class Topic extends Quizz {
     @Id
+    @GeneratedValue
     private int id;
+    @Column(name = "topic")
     private String topic;
 
 }

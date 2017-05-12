@@ -1,25 +1,23 @@
-package com.domain.quiz;
+package com.domain.singletable;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.annotation.Generated;
 import javax.persistence.*;
 
 /**
- * Domain Topic entity
+ * Domain Quizz abstract entity
  *
  * @author Ihar_Rubanovich
  */
 @Data
 @Accessors(chain = true)
 @SuppressWarnings("superwarningTopic")
-@Entity
 @Inheritance
-@DiscriminatorColumn()
 @Table(name ="quiz")
-public abstract class Topic {
+public abstract class Quizz {
     @Id
-    private int id;
-    private String topic;
-
+    @Column(name = "" )
+    private Long quizId;
 }
