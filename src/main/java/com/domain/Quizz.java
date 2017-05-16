@@ -1,10 +1,11 @@
-package com.domain.singletable;
+package com.domain;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Domain Quizz abstract entity
@@ -13,11 +14,10 @@ import javax.persistence.*;
  */
 @Data
 @Accessors(chain = true)
-@SuppressWarnings("superwarningTopic")
-@Inheritance
-@Table(name ="quiz")
-public abstract class Quizz {
+@MappedSuperclass
+public abstract class Quizz implements Serializable {
     @Id
-    @Column(name = "" )
+    @GeneratedValue
     private Long quizId;
+    private String name;
 }

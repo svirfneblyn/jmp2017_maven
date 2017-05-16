@@ -1,5 +1,6 @@
 package com.resource.iresource;
 
+import com.domain.inheritance.singletable.Question;
 import com.dto.DispatcherDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -21,5 +22,8 @@ public interface IDispatcherResource {
 
     @RequestMapping(value = "/dispatcher/{name}", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
     ResponseEntity<?> deleteDispatcher(@PathVariable("name") String name);
+
+    @GetMapping(value = "/quiz", produces = "application/json")
+    List<Question> getAllQuestions();
 
 }

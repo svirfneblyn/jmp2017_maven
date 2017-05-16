@@ -1,9 +1,4 @@
-package com.domain.singletable;
-
-import lombok.Data;
-import lombok.experimental.Accessors;
-
-import javax.persistence.*;
+package com.domain.inheritance.singletable;
 
 /**
  * Domain CorrectAnswer entity

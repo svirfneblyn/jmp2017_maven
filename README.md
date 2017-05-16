@@ -16,7 +16,7 @@
   3. сортировка при вычитке из базу
       @OrderColumn
      @OrderBy
-  4. Хранение иерархии наследования
+  + 4. Хранение иерархии наследования
      3 способа хранения иерархий наследования: joined, single table, table per class
   4. Native SQL
      @SqlResultSetMapping

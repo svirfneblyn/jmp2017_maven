@@ -1,7 +1,9 @@
 package com.resource;
 
 
+import com.domain.inheritance.singletable.Question;
 import com.dto.DispatcherDto;
+import com.service.singletableservices.impl.QuestionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.resource.iresource.IDispatcherResource;
-import com.service.impl.DispatcherServiceImpl;
+import com.service.dispatcherservices.DispatcherServiceImpl;
 
 import java.util.List;
 
@@ -18,6 +20,9 @@ public class DispatcherResourceImpl implements IDispatcherResource {
 
     @Autowired
     private DispatcherServiceImpl service;
+    @Autowired
+    private QuestionServiceImpl questionService;
+
 
     @Override
     public ResponseEntity<?> addDispatcher(@RequestBody DispatcherDto dispatcherDto) {
@@ -28,6 +33,11 @@ public class DispatcherResourceImpl implements IDispatcherResource {
     @Override
     public List<DispatcherDto> getDispatchers() {
         return service.getDispatchers();
+    }
+
+    @Override
+    public List<Question> getAllQuestions() {
+        return questionService.findAllQuestions();
     }
 
     @Override

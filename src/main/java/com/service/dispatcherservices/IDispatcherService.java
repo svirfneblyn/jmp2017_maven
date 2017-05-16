@@ -1,4 +1,4 @@
-package com.service;
+package com.service.dispatcherservices;
 
 
 import com.dto.DispatcherDto;

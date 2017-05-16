@@ -1,24 +1,22 @@
-package com.domain.singletable;
+package com.domain.inheritance.singletable;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
 /**
- * Domain Question entity
+ * Domain QuestionT entity
  *
  * @author Ihar_Rubanovich
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Accessors(chain = true)
-@SuppressWarnings("superwarning Question")
 @Entity
-@Inheritance
-
 @DiscriminatorValue(value = "QUESTION")
 public class Question extends Topic {
-    @Id
-    private Long question_id;
+
     private String question;
 }

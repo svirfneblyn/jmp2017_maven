@@ -1,30 +1,26 @@
-package com.domain.singletable;
+package com.domain.inheritance.tableperclass;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
 /**
- * Domain Answer entity
+ * Domain AnswerT entity
  *
  * @author Ihar_Rubanovich
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Accessors(chain = true)
-@SuppressWarnings("superwarning Question")
 @Entity
-@Inheritance
 @DiscriminatorValue(value = "ANSWER")
-//@Table(name = "correct_answer")
-public class Answer {
-    @Id
-    private int answerId;
+public class AnswerT extends TopicT {
     @Column(name = "replay_text")
     private String replayText;
     @Column(name = "is_answer_correct")
     @Enumerated(EnumType.STRING)
     private CorrectAnswers isCorrect;
-
 }

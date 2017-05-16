@@ -1,4 +1,4 @@
-package com.service.impl;
+package com.service.dispatcherservices;
 
 import com.converter.DispatcherDtoToDispatcherConverter;
 import com.converter.DispatcherToDispatcherDtoConverter;
@@ -7,7 +7,6 @@ import com.dto.DispatcherDto;
 import com.domain.Dispatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.service.IDispatcherService;
 
 import java.util.ArrayList;
 import java.util.List;
