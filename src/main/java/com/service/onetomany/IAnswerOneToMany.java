@@ -1,6 +1,6 @@
-package com.service.onetooneservice;
+package com.service.onetomany;
 
-import com.domain.relations.onetoone.TopicOneToOne;
+import com.domain.relations.onetomany.AnswerOnetoMany;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @author Ihar_rubanovich.
  */
 @Repository
-public interface ITopicOneToOneRepository extends CrudRepository<TopicOneToOne,Long> {
+public interface IAnswerOneToMany extends CrudRepository<AnswerOnetoMany,Long> {
 }

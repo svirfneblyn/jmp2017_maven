@@ -1,7 +1,6 @@
 package com.service.onetooneservice.impl;
 
-import com.domain.relations.onetoone.QuestionRel;
-import com.domain.relations.onetoone.TopicRel;
+import com.domain.relations.onetoone.TopicOneToOne;
 import com.service.onetooneservice.IQuestionOneToOneRelRepository;
 import com.service.onetooneservice.ITopicOneToOneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +23,18 @@ public class TopicOneToOneService {
     @Autowired
     private IQuestionOneToOneRelRepository iQuesRepo;
 
-    public List<TopicRel> findAll() {
-        List<TopicRel> objects = new ArrayList<>();
+    public List<TopicOneToOne> findAll() {
+        List<TopicOneToOne> objects = new ArrayList<>();
         iTopicOneToOneRepository.findAll().forEach(objects::add);
         return objects;
     }
+    public TopicOneToOne find(Long id){
+        return iTopicOneToOneRepository.findOne(id);
+    }
     @Transactional
-    public void create(TopicRel topicRel, QuestionRel questionRel) {
-        iQuesRepo.save(questionRel);
-        topicRel.setQuestionId(questionRel);
+    public void create(TopicOneToOne topicRel) {
         iTopicOneToOneRepository.save(topicRel);
-        //questionRel.setRel(topicRel);
+        System.out.println("done");
 
     }
 }

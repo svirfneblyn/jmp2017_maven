@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,14 +25,12 @@ import java.util.Set;
 @Data
 @Accessors(chain = true)
 @Entity
-@Table(name = "one_to_many")
+@Table(name = "question_one_to_many")
 public class QuestionOneToMany {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "question_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String question;
-    @OneToMany(mappedBy="replayText")
-    @OrderBy("replayText DESC")
-    private Set<AnswerOnetoMany> replayText;
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<AnswerOnetoMany> questionId;
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
+    <diskStore path="java.io.tmpdir/hibernateCache"/>
+
+    <!-- If no matching cache for entity/query found, Hibernate uses default cache -->
+    <defaultCache maxElementsInMemory="1000" diskPersistent="false"/>
+
+    <cache name="base_cache" maxElementsInMemory="100"
+           eternal="true" timeToIdleSeconds="1800" timeToLiveSeconds="3000" overflowToDisk="false"
+    />
+
+</ehcache>

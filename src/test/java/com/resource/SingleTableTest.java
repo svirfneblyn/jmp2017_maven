@@ -39,15 +39,15 @@ public class SingleTableTest {
     @Test
     public void answersTest() {
         System.out.println(quizzService.findAllTopics());
-        /*output is : [AnswerT(replayText=The primary key class must be serializable., isCorrect=CORRECT),
-                  AnswerT(replayText=The primary key class must be NOT serializable., isCorrect=INCORRECT),
+        /*output is : [AnswerT(answers=The primary key class must be serializable., isCorrect=CORRECT),
+                  AnswerT(answers=The primary key class must be NOT serializable., isCorrect=INCORRECT),
                   QuestionT(question=Check correct answers about primary key : ),
                   QuestionT(question=Howdoyoudo?)]
         */
         System.out.println(answerRepository.findAllAnswers());
         /*output is :
-        * [AnswerT(replayText=The primary key class must be serializable., isCorrect=CORRECT),
-        * AnswerT(replayText=The primary key class must be NOT serializable., isCorrect=INCORRECT)]
+        * [AnswerT(answers=The primary key class must be serializable., isCorrect=CORRECT),
+        * AnswerT(answers=The primary key class must be NOT serializable., isCorrect=INCORRECT)]
         */
         System.out.println(questionService.findAllQuestions());
         /*output is :

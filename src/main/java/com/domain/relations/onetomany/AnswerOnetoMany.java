@@ -17,15 +17,18 @@ import javax.persistence.*;
 @Data
 @Accessors(chain = true)
 @Entity
-@Table(name = "one_to_many")
+@Table(name = "answer_one_to_many")
 public class AnswerOnetoMany {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "answer_id")
     private Long answerId;
-    @Column(name = "replay_text")
+    @Column(name = "answer")
+    private String ans;
     @ManyToOne(fetch=FetchType.LAZY)
-    private String replayText;
+    @JoinColumn(name = "id")
+    @OrderBy("questionId DESC")
+    private QuestionOneToMany questionId;
     @Column(name = "is_answer_correct")
     @Enumerated(EnumType.STRING)
     private CorrectAnswers isCorrect;
