@@ -1,8 +1,6 @@
 package com.domain.relations.onetoone;
 
-import com.domain.inheritance.singletable.Topic;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
@@ -12,17 +10,18 @@ import javax.persistence.*;
  *
  * @author Ihar_Rubanovich
  */
+
 @Data
 @Accessors(chain = true)
 @Entity
 @Table(name = "question_rel")
-public class QuestionRel {
+public class QuestionOneToOne {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY )
+    @GeneratedValue(strategy =GenerationType.AUTO )
     @Column(name = "question_id", insertable = true, updatable = true)
     private Long questionId;
     @Column(name = "question")
     private String question;
-    @OneToOne(cascade = CascadeType.MERGE , mappedBy = "questionId")
-    private TopicRel rel;
+    @OneToOne(mappedBy = "questionId",cascade=CascadeType.MERGE)
+    private TopicOneToOne topicId;
 }
